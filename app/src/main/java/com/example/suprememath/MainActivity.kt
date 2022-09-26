@@ -1,6 +1,7 @@
 package com.example.suprememath
 
 import android.os.Bundle
+import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -12,6 +13,7 @@ import com.example.suprememath.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var prefs: Prefs
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,5 +32,11 @@ class MainActivity : AppCompatActivity() {
             R.id.navigation_notifications))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        navView.visibility= View.VISIBLE
+        prefs= Prefs(this)
+        if (!prefs!!.isShown()){
+            navView.visibility= View.GONE
+            navController.navigate(R.id.boardFragment)
+        }
     }
 }

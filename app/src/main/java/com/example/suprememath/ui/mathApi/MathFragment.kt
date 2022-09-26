@@ -56,7 +56,6 @@ class MathFragment : Fragment() {
         binding.editBtn.setOnClickListener {
 
         }
-
         binding.floatingBtn.setOnClickListener {
             onBtnClicked()
         }
