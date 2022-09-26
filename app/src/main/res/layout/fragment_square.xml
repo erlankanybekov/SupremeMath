@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".ui.square_equation.SquareFragment">
+
+    <EditText
+    android:id="@+id/X2"
+    android:layout_width="30dp"
+    android:layout_height="30dp"
+    android:layout_marginTop="55dp"
+    android:background="#404243"
+        android:inputType="numberDecimal|numberSigned"
+    android:textAlignment="center"
+    android:minWidth="48dp"
+        android:maxLength="4"
+    android:textSize="15sp"
+    app:layout_constraintStart_toStartOf="@id/graph_view"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/solvex2"
+        app:cornerRadius="50dp"
+        android:text="solve"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="70dp"
+        android:textColor="@color/white"
+        android:background="@drawable/gradient"
+        android:layout_marginStart="120dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/ansX2"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/Discriminant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="D = ?"
+        android:textColor="#00B0FF"
+        android:textSize="25sp"
+        android:fontFamily="@font/modern_antiqua"
+        android:visibility="visible"
+        android:layout_marginBottom="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toStartOf="@id/graph_view" />
+
+    <com.aghajari.graphview.AXGraphView
+        android:id="@+id/graph_view"
+        app:layout_constraintBottom_toTopOf="@+id/Discriminant"
+        android:backgroundTint="@color/white"
+        android:layout_marginHorizontal="35dp"
+        android:background = "@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"/>
+
+
+    <Button
+        android:id="@+id/ClearBtn"
+        app:cornerRadius="50dp"
+        android:text="@string/clear"
+        android:textColor="@color/white"
+        android:background="@drawable/gradient"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintStart_toEndOf="@id/solvex2"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/solvex2"
+        android:layout_marginStart="14dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/ansX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="x1 = ?"
+        android:textColor="#00B0FF"
+        android:textSize="25sp"
+        android:fontFamily="@font/modern_antiqua"
+        android:visibility="visible"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toStartOf="@id/graph_view"
+        app:layout_constraintTop_toBottomOf="@id/Discriminant"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/ansX2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="x2 = ?"
+        android:textColor="#00B0FF"
+        android:textSize="25sp"
+        android:fontFamily="@font/modern_antiqua"
+        android:layout_marginStart="30dp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="@id/graph_view"
+        app:layout_constraintTop_toBottomOf="@id/ansX"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/txt2"
+        android:layout_width="23dp"
+        android:layout_height="25dp"
+        android:text="x²"
+        android:textColor="#FBFAFA"
+        android:textSize="20sp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/X2"
+        app:layout_constraintStart_toEndOf="@+id/X2"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/txtPlus"
+        android:layout_width="20dp"
+        android:layout_height="27dp"
+        android:text="±"
+        android:textColor="#FBFAFA"
+        android:textSize="28sp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/txt2"
+        app:layout_constraintStart_toEndOf="@+id/txt2"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/txtPlus2"
+        android:layout_width="20dp"
+        android:layout_height="27dp"
+        android:text="±"
+        android:textColor="#FBFAFA"
+        android:textSize="28sp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/txt2"
+        app:layout_constraintStart_toEndOf="@+id/txtX"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/firstX"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="55dp"
+        android:background="#404243"
+        android:inputType="numberDecimal|numberSigned"
+        android:textAlignment="center"
+        android:minWidth="48dp"
+        android:maxLength="4"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@id/txtPlus"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+
+    <TextView
+        android:id="@+id/txtX"
+        android:layout_width="23dp"
+        android:layout_height="25dp"
+        android:text="x"
+        android:textColor="#F8F5F5"
+        android:textSize="20sp"
+        android:layout_marginStart="7dp"
+        app:layout_constraintStart_toEndOf="@+id/firstX"
+        app:layout_constraintBottom_toBottomOf="@id/firstX"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/C"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="55dp"
+        android:background="#404243"
+        android:minWidth="48dp"
+        android:maxLength="4"
+        android:inputType="numberDecimal|numberSigned"
+        android:textSize="15sp"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@id/txtPlus2"
+        app:layout_constraintBottom_toBottomOf="@id/firstX"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/txtequal"
+        android:layout_width="19dp"
+        android:layout_height="25dp"
+        android:text="="
+        android:textColor="#F8F4F4"
+        android:textSize="20sp"
+        android:layout_marginStart="62dp"
+        app:layout_constraintStart_toStartOf="@id/C"
+        app:layout_constraintBottom_toBottomOf="@id/C"
+        app:layout_constraintStart_toEndOf="@+id/C"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/digit1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="55dp"
+        android:background="#404243"
+        android:textAlignment="center"
+        android:minWidth="48dp"
+        android:maxLength="4"
+        android:inputType="numberDecimal|numberSigned"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@id/graph_view"
+        app:layout_constraintBottom_toBottomOf="@id/txtequal"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

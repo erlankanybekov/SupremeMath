@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">SupremeMath</string>
+    <string name="title_home">Linear system"</string>
+    <string name="title_dashboard">Quadratic equation</string>
+    <string name="title_notifications">buttons</string>
+    <string name="clear">clear</string>
+    <string name="simpletime">Simpletime</string>
+    <string name="simpledate">SimpleDate</string>
+    <string name="graphview">GraphView</string>
+    <string name="buttons">Buttons</string>
+    <string name="text">Text...</string>
+    <string name="send">send</string>
+    <string name="result">Result</string>
+    <string name="expression">expression</string>
+    <string name="evaluate">evaluate</string>
+
+
+    <string-array name="sovles">
+        <item>solve matrix</item>
+        <item>solve x,y system</item>
+    </string-array>
+</resources>
