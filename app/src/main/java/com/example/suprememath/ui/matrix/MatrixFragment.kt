@@ -220,18 +220,18 @@ class MatrixFragment : Fragment() {
     }
 
     private fun methodKramer() {
-        if (binding.firstX.text.toString().contains("*")|| binding.firstX.text.toString().contains("N")|| binding.firstX.text.toString().contains(",")|| binding.firstX.text.toString().contains("+")|| binding.firstX.text.toString().contains("#")|| binding.firstX.text.toString().contains(")")|| binding.firstX.text.toString().contains("/")|| binding.firstX.text.toString().contains("(")||
-            binding.firstY.text.toString().contains("*")|| binding.firstY.text.toString().contains("N") || binding.firstY.text.toString().contains(",") || binding.firstY.text.toString().contains("+") || binding.firstY.text.toString().contains("#") || binding.firstY.text.toString().contains(")") || binding.firstY.text.toString().contains("/") || binding.firstY.text.toString().contains("(") ||
-            binding.firstZ.text.toString().contains("*")||  binding.firstZ.text.toString().contains("N")||  binding.firstZ.text.toString().contains(",")||  binding.firstZ.text.toString().contains("+")|| binding.firstZ.text.toString().contains("#")||  binding.firstZ.text.toString().contains(")")||  binding.firstZ.text.toString().contains("/")||  binding.firstZ.text.toString().contains("(")||
-            binding.secondX.text.toString().contains("*")||binding.secondX.text.toString().contains("N")||binding.secondX.text.toString().contains(",")||binding.secondX.text.toString().contains("+")||binding.secondX.text.toString().contains("#")||binding.secondX.text.toString().contains(")")||binding.secondX.text.toString().contains("/")||binding.secondX.text.toString().contains("(")||
-            binding.secondY.text.toString().contains("*") || binding.secondY.text.toString().contains("N") ||binding.secondY.text.toString().contains(",") ||binding.secondY.text.toString().contains("+") ||binding.secondY.text.toString().contains("#") ||binding.secondY.text.toString().contains(")") ||binding.secondY.text.toString().contains("/") ||  binding.secondY.text.toString().contains("(") ||
-            binding.secondZ.text.toString().contains("*") || binding.secondZ.text.toString().contains("N") ||  binding.secondZ.text.toString().contains(",") ||  binding.secondZ.text.toString().contains("+") ||  binding.secondZ.text.toString().contains("#") ||  binding.secondZ.text.toString().contains(")") ||  binding.secondZ.text.toString().contains("/") || binding.secondZ.text.toString().contains("(") ||
-            binding.thirdX.text.toString().contains("*")|| binding.thirdX.text.toString().contains("N")||binding.thirdX.text.toString().contains(",")||binding.thirdX.text.toString().contains("+")||binding.thirdX.text.toString().contains("#")||binding.thirdX.text.toString().contains(")")||binding.thirdX.text.toString().contains("/")||binding.thirdX.text.toString().contains("(")||
-            binding.thirdY.text.toString().contains("*")||  binding.thirdY.text.toString().contains("N")|| binding.thirdY.text.toString().contains(",")|| binding.thirdY.text.toString().contains("+")|| binding.thirdY.text.toString().contains("#")|| binding.thirdY.text.toString().contains(")")|| binding.thirdY.text.toString().contains("/")|| binding.thirdY.text.toString().contains("(")||
-            binding.thirdZ.text.toString().contains("*")|| binding.thirdZ.text.toString().contains("N")||binding.thirdZ.text.toString().contains(",")||binding.thirdZ.text.toString().contains("+")||binding.thirdZ.text.toString().contains("#")||binding.thirdZ.text.toString().contains(")")||binding.thirdZ.text.toString().contains("/")|| binding.thirdZ.text.toString().contains("(")||
-            binding.digit1.text.toString().contains("*") || binding.digit1.text.toString().contains("N") ||binding.digit1.text.toString().contains(",") ||binding.digit1.text.toString().contains("+") ||binding.digit1.text.toString().contains("#") ||binding.digit1.text.toString().contains(")") ||binding.digit1.text.toString().contains("/") || binding.digit1.text.toString().contains("(") ||
-            binding.digit2.text.toString().contains("*") ||  binding.digit2.text.toString().contains("N") || binding.digit2.text.toString().contains(",") || binding.digit2.text.toString().contains("+") || binding.digit2.text.toString().contains("#") || binding.digit2.text.toString().contains(")") || binding.digit2.text.toString().contains("/") || binding.digit2.text.toString().contains("(") ||
-            binding.digit3.text.toString().contains("*")|| binding.digit3.text.toString().contains("N")||binding.digit3.text.toString().contains(",")||binding.digit3.text.toString().contains("+")||binding.digit3.text.toString().contains("#")||binding.digit3.text.toString().contains(")")||binding.digit3.text.toString().contains("/")|| binding.digit3.text.toString().contains("(")){
+        if ( binding.firstX.text.toString().contains("N")|| binding.firstX.text.toString().contains(",")|| binding.firstX.text.toString().contains("+")|| binding.firstX.text.toString().contains("#")|| binding.firstX.text.toString().contains(")")|| binding.firstX.text.toString().contains("/")|| binding.firstX.text.toString().contains("(")||
+             binding.firstY.text.toString().contains("N") || binding.firstY.text.toString().contains(",") || binding.firstY.text.toString().contains("+") || binding.firstY.text.toString().contains("#") || binding.firstY.text.toString().contains(")") || binding.firstY.text.toString().contains("/") || binding.firstY.text.toString().contains("(") ||
+            binding.firstZ.text.toString().contains("N")||  binding.firstZ.text.toString().contains(",")||  binding.firstZ.text.toString().contains("+")|| binding.firstZ.text.toString().contains("#")||  binding.firstZ.text.toString().contains(")")||  binding.firstZ.text.toString().contains("/")||  binding.firstZ.text.toString().contains("(")||
+            binding.secondX.text.toString().contains("N")||binding.secondX.text.toString().contains(",")||binding.secondX.text.toString().contains("+")||binding.secondX.text.toString().contains("#")||binding.secondX.text.toString().contains(")")||binding.secondX.text.toString().contains("/")||binding.secondX.text.toString().contains("(")||
+            binding.secondY.text.toString().contains("N") ||binding.secondY.text.toString().contains(",") ||binding.secondY.text.toString().contains("+") ||binding.secondY.text.toString().contains("#") ||binding.secondY.text.toString().contains(")") ||binding.secondY.text.toString().contains("/") ||  binding.secondY.text.toString().contains("(") ||
+            binding.secondZ.text.toString().contains("N") ||  binding.secondZ.text.toString().contains(",") ||  binding.secondZ.text.toString().contains("+") ||  binding.secondZ.text.toString().contains("#") ||  binding.secondZ.text.toString().contains(")") ||  binding.secondZ.text.toString().contains("/") || binding.secondZ.text.toString().contains("(") ||
+             binding.thirdX.text.toString().contains("N")||binding.thirdX.text.toString().contains(",")||binding.thirdX.text.toString().contains("+")||binding.thirdX.text.toString().contains("#")||binding.thirdX.text.toString().contains(")")||binding.thirdX.text.toString().contains("/")||binding.thirdX.text.toString().contains("(")||
+              binding.thirdY.text.toString().contains("N")|| binding.thirdY.text.toString().contains(",")|| binding.thirdY.text.toString().contains("+")|| binding.thirdY.text.toString().contains("#")|| binding.thirdY.text.toString().contains(")")|| binding.thirdY.text.toString().contains("/")|| binding.thirdY.text.toString().contains("(")||
+             binding.thirdZ.text.toString().contains("N")||binding.thirdZ.text.toString().contains(",")||binding.thirdZ.text.toString().contains("+")||binding.thirdZ.text.toString().contains("#")||binding.thirdZ.text.toString().contains(")")||binding.thirdZ.text.toString().contains("/")|| binding.thirdZ.text.toString().contains("(")||
+           binding.digit1.text.toString().contains("N") ||binding.digit1.text.toString().contains(",") ||binding.digit1.text.toString().contains("+") ||binding.digit1.text.toString().contains("#") ||binding.digit1.text.toString().contains(")") ||binding.digit1.text.toString().contains("/") || binding.digit1.text.toString().contains("(") ||
+              binding.digit2.text.toString().contains("N") || binding.digit2.text.toString().contains(",") || binding.digit2.text.toString().contains("+") || binding.digit2.text.toString().contains("#") || binding.digit2.text.toString().contains(")") || binding.digit2.text.toString().contains("/") || binding.digit2.text.toString().contains("(") ||
+             binding.digit3.text.toString().contains("N")||binding.digit3.text.toString().contains(",")||binding.digit3.text.toString().contains("+")||binding.digit3.text.toString().contains("#")||binding.digit3.text.toString().contains(")")||binding.digit3.text.toString().contains("/")|| binding.digit3.text.toString().contains("(")){
             Toast.makeText(requireContext(),"вы ввели символы",Toast.LENGTH_SHORT).show()
         }
 
@@ -266,7 +266,20 @@ class MatrixFragment : Fragment() {
         )
         {
             Toast.makeText(requireContext(),".", Toast.LENGTH_SHORT).show()
-        }
+        } else  if (binding.firstX.text.toString().equals("-")||
+            binding.firstY.text.toString().equals("-") ||
+            binding.firstZ.text.toString().equals("-")||
+            binding.secondX.text.toString().equals("-")||
+            binding.secondY.text.toString().equals("-") ||
+            binding.secondZ.text.toString().equals("-") ||
+            binding.thirdX.text.toString().equals("-") ||
+            binding.thirdY.text.toString().equals("-") ||
+            binding.thirdZ.text.toString().equals("-") ||
+            binding.digit1.text.toString().equals("-") ||
+            binding.digit2.text.toString().equals("-")  ||
+            binding.digit3.text.toString().equals("-")){
+            Toast.makeText(requireContext(),"-", Toast.LENGTH_SHORT).show()
+            }
         else{
             val x1 = binding.firstX.text.toString().toDouble()
             val x2 = binding.secondX.text.toString().toDouble()
@@ -322,17 +335,6 @@ class MatrixFragment : Fragment() {
                 binding.ansZ.setText("z =${ansZ}")
             }
         }
-
-
-
-
-
-
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-
     }
 
 }
