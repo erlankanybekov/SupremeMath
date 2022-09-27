@@ -11,20 +11,18 @@ import com.example.suprememath.databinding.PagerBoardBinding
 class BoardAdapter(private val startClick: () -> Unit) :RecyclerView.Adapter<BoardAdapter.ViewHolder>() {
 
 
-    private val titles = arrayListOf("Have a good time!","Cherishing love","Maybe someone is waiting for you!",
-        "Let's find out? ;)")
-    private val description = arrayListOf("You should take the time to help those who needs you"
-        ,"Its now no longer to you cherish love","","")
+    private val titles = arrayListOf("Welcome to MathSupreme!","","Your personal Supreme Calculator!")
+    private val description = arrayListOf("This application will help you in calculating complex arithmetic, trigonometric problems"
+        ,"also it can help to solve problems related to the matrix or complex systems of equations and quadratic equations","","")
 
      inner class ViewHolder(private  var binding: PagerBoardBinding):RecyclerView.ViewHolder(binding.root) {
          fun bind(position: Int) {
 
              with(binding) {
                  when(position){
-                     0->{lottieAnim.setAnimation(R.raw.differ)}
-                     1->{lottieAnim.setAnimation(R.raw.presentation)}
-                     2->{lottieAnim}
-                     3->{lottieAnim}
+                     0->{lottieAnim.setAnimation(R.raw.teacherofmathematics)}
+                     1->{lottieAnim.setAnimation(R.raw.differ)}
+                     2->{lottieAnim.setAnimation(R.raw.calculator)}
                  }
                  if (position == titles.size-1){
                      btnStart.visibility = View.VISIBLE

@@ -31,6 +31,7 @@ class BoardFragment : Fragment() {
             findNavController().navigateUp()
             prefs = Prefs(requireContext())
             prefs.saveState()
+
         }
         binding.viewPager.adapter = adapter
         val dots= binding.wormDotsIndicator

@@ -68,14 +68,12 @@ class MathFragment : Fragment() {
                 Toast.makeText(requireContext(),"не получилось  ${e.localizedMessage}",Toast.LENGTH_SHORT).show()
             }
         }
-
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == request_img && resultCode == RESULT_OK ){
             val imageBitmap = data?.extras?.get("data") as Bitmap
-            binding.img.setImageBitmap(imageBitmap)
+          //  binding.img.setImageBitmap(imageBitmap)
         }else{
             super.onActivityResult(requestCode, resultCode, data)
 
