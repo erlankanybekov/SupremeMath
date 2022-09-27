@@ -168,7 +168,6 @@ class SquareFragment : Fragment() {
             val c = c1+(-digit1)
             val c23 = (c1+(-digit1)).toString()
 
-
             val discriminant = ((b*b)-4*a*c).toDouble()
             binding.Discriminant.setText("D=$discriminant")
 
@@ -176,9 +175,13 @@ class SquareFragment : Fragment() {
                 val x1 = (((-b)+ sqrt(discriminant))/(2*a)).toString()
 
                 val x2 = (((-b)- sqrt(discriminant))/(2*a)).toString()
-                binding.ansX.setText("x1 = ${-b}+√${discriminant}/${2*a}")
-                binding.ansX2.setText("x2 = ${-b}-√${discriminant}/${2*a}")
-
+                if (x1.length>4||x2.length>4){
+                    binding.ansX2.setText("x2 = ${-b}-√${discriminant}/${2*a}")
+                    binding.ansX.setText("x1 = ${-b}+√${discriminant}/${2*a}")
+                }else{
+                    binding.ansX2.setText("x2 = ${x2}")
+                    binding.ansX.setText("x1 = ${x1}")
+                }
 
                 val xsquare = binding.X2.text.toString()
                 val xfirst = binding.firstX.text.toString()
@@ -191,7 +194,6 @@ class SquareFragment : Fragment() {
                 bundle.putFloat("c23",c23.toFloat())
                 bundle.putFloat("firstx",xfirst.toFloat())
                 parentFragmentManager.setFragmentResult("xs",bundle)
-
 
             }
             if(discriminant < 0){
@@ -211,7 +213,6 @@ class SquareFragment : Fragment() {
                 bundle.putFloat("c23",c23.toFloat())
                 bundle.putFloat("firstx",xfirst.toFloat())
                 parentFragmentManager.setFragmentResult("xs",bundle)
-
 
                 binding.ansX.setText("x1 = ${-b} + √${-discriminant} * i/${2*a}")
                 binding.ansX2.setText("x2 = ${-b} - √${-discriminant} * i/${2*a}")
