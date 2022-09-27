@@ -19,7 +19,7 @@ class MatrixFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentMatrixBinding.inflate(inflater,container,false)
         return binding.root
     }
@@ -134,14 +134,11 @@ class MatrixFragment : Fragment() {
 
     private fun Kramer() {
 
-
-
         if (binding.firstX.text.toString().equals("")||
             binding.firstY.text.toString().equals("") ||
 
             binding.secondX.text.toString().equals("")||
             binding.secondY.text.toString().equals("") ||
-
 
             binding.digit1.text.toString().equals("") ||
             binding.digit2.text.toString().equals("")
@@ -154,7 +151,6 @@ class MatrixFragment : Fragment() {
             binding.secondX.text.toString().equals(".")||
             binding.secondY.text.toString().equals(".") ||
 
-
             binding.digit1.text.toString().equals(".") ||
             binding.digit2.text.toString().equals(".")
         )
@@ -165,7 +161,6 @@ class MatrixFragment : Fragment() {
 
             binding.secondX.text.toString().equals("-")||
             binding.secondY.text.toString().equals("-") ||
-
 
             binding.digit1.text.toString().equals("-") ||
             binding.digit2.text.toString().equals("-")){
@@ -187,13 +182,15 @@ class MatrixFragment : Fragment() {
             val ansX = ((digit1 * y2 - y1 * digit2) / determinant).toString()
             val ansY = ((x1 * digit2 - digit1 * x2)/ determinant).toString()
 
-
-            val chislX = (digit1 * y2 - y1 * digit2)
-            val chislY = (x1 * digit2 - digit1 * x2)
-
             //setText
-            binding.ansX.setText("x =$chislX/${determinant}")
-            binding.ansY.setText("y =$chislY/${determinant}")
+            if (ansX.length>4 || ansY.length>4){
+                binding.ansX.setText("x =${digit1 * y2 - y1 * digit2}/${determinant}")
+                binding.ansY.setText("y =${x1 * digit2 - digit1 * x2}/${determinant}")
+
+            }else{
+                binding.ansX.setText("x =${ansX}")
+                binding.ansY.setText("y =${ansY}")
+            }
 
             binding.ansZ.visibility = View.GONE
 
@@ -315,11 +312,15 @@ class MatrixFragment : Fragment() {
             val chislY = (ansY1-ansY2)
             val chislZ = (ansZ1 - ansZ2)
 
-
-            // setText ans
-            binding.ansX.setText("x =$chislX/${determinant}")
-            binding.ansY.setText("y =$chislY/${determinant}")
-            binding.ansZ.setText("z =$chislZ/${determinant}")
+            if (ansX.length>4 || ansY.length>4 || ansZ.length>4){
+                binding.ansX.setText("x =$chislX/${determinant}")
+                binding.ansY.setText("y =$chislY/${determinant}")
+                binding.ansZ.setText("z =$chislZ/${determinant}")
+            }else{
+                binding.ansX.setText("x =${ansX}")
+                binding.ansY.setText("y =${ansY}")
+                binding.ansZ.setText("z =${ansZ}")
+            }
         }
 
 
