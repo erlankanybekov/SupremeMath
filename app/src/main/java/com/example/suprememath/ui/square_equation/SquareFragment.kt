@@ -156,7 +156,7 @@ class SquareFragment : Fragment() {
         options.textPaint.setColor(Color.BLUE);
         options.gridLinePaint.setColor(Color.GRAY)
 
-        graphView.setGraphOptions(options)
+        graphView.graphOptions = options
         graphView.clearFormulas()
 
     }
@@ -231,22 +231,26 @@ class SquareFragment : Fragment() {
                 bundleAlert.putString("nominator",nominator)
                 bundleAlert.putString("denominator",denominator)
 
-                val alertBinding = layoutInflater.inflate(R.layout.layout_x2_alert_dialog,null)
+                if (binding.X3?.text!!.isEmpty()){
+                    val alertBinding = layoutInflater.inflate(R.layout.layout_x2_alert_dialog,null)
 
-                val alertDialog = Dialog(requireContext())
-                alertDialog.setContentView(alertBinding)
-                alertDialog.setCancelable(true)
-                alertDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+                    val alertDialog = Dialog(requireContext())
+                    alertDialog.setContentView(alertBinding)
+                    alertDialog.setCancelable(true)
+                    alertDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
-                val ans1 = alertDialog.findViewById<TextView>(R.id.ans1)
-                val ans2 = alertDialog.findViewById<TextView>(R.id.ans2)
-                val nominator_al = alertDialog.findViewById<TextView>(R.id.nominator)
-                val denominator_al = alertDialog.findViewById<TextView>(R.id.denominator)
-                ans1.text = bundleAlert.getString("x1alert")
-                ans2.text = bundleAlert.getString("x2alert")
-                nominator_al.text = bundleAlert.getString("nominator")
-                denominator_al.text = bundleAlert.getString("denominator")
-                alertDialog.show()
+                    val ans1 = alertDialog.findViewById<TextView>(R.id.ans1)
+                    val ans2 = alertDialog.findViewById<TextView>(R.id.ans2)
+                    val nominator_al = alertDialog.findViewById<TextView>(R.id.nominator)
+                    val denominator_al = alertDialog.findViewById<TextView>(R.id.denominator)
+                    ans1.text = bundleAlert.getString("x1alert")
+                    ans2.text = bundleAlert.getString("x2alert")
+                    nominator_al.text = bundleAlert.getString("nominator")
+                    denominator_al.text = bundleAlert.getString("denominator")
+                    alertDialog.show()
+                }
+
+
 
             }
             if (discriminant.equals(0.0)){
@@ -283,22 +287,24 @@ class SquareFragment : Fragment() {
                 bundleAlert.putString("nominator",nominator)
                 bundleAlert.putString("denominator",denominator)
 
-                val alertBinding = layoutInflater.inflate(R.layout.layout_x2_alert_dialog,null)
+                if (binding.X3?.text!!.isEmpty()){
+                    val alertBinding = layoutInflater.inflate(R.layout.layout_x2_alert_dialog,null)
 
-                val alertDialog = Dialog(requireContext())
-                alertDialog.setContentView(alertBinding)
-                alertDialog.setCancelable(true)
-                alertDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+                    val alertDialog = Dialog(requireContext())
+                    alertDialog.setContentView(alertBinding)
+                    alertDialog.setCancelable(true)
+                    alertDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
-                val ans1 = alertDialog.findViewById<TextView>(R.id.ans1)
-                val ans2 = alertDialog.findViewById<TextView>(R.id.ans2)
-                val nominator_al = alertDialog.findViewById<TextView>(R.id.nominator)
-                val denominator_al = alertDialog.findViewById<TextView>(R.id.denominator)
-                ans1.text = bundleAlert.getString("x1alert")
-                ans2.text = bundleAlert.getString("x2alert")
-                nominator_al.text = bundleAlert.getString("nominator")
-                denominator_al.text = bundleAlert.getString("denominator")
-                alertDialog.show()
+                    val ans1 = alertDialog.findViewById<TextView>(R.id.ans1)
+                    val ans2 = alertDialog.findViewById<TextView>(R.id.ans2)
+                    val nominator_al = alertDialog.findViewById<TextView>(R.id.nominator)
+                    val denominator_al = alertDialog.findViewById<TextView>(R.id.denominator)
+                    ans1.text = bundleAlert.getString("x1alert")
+                    ans2.text = bundleAlert.getString("x2alert")
+                    nominator_al.text = bundleAlert.getString("nominator")
+                    denominator_al.text = bundleAlert.getString("denominator")
+                    alertDialog.show()
+                }
 
             }
             if(discriminant < 0){
@@ -309,7 +315,6 @@ class SquareFragment : Fragment() {
                     binding.ansX.setText("x1 = $x1")
                     binding.ansX2.setText("x2 = $x2")
                 }
-
 
                 val xsquare = binding.X2.text.toString()
                 val xfirst = binding.firstX.text.toString()
@@ -325,12 +330,14 @@ class SquareFragment : Fragment() {
                 if (binding.X3?.text!!.isEmpty()){
                     binding.ansX.setText("x1 = ${-b} + √${-discriminant} * i/${2*a}")
                     binding.ansX2.setText("x2 = ${-b} - √${-discriminant} * i/${2*a}")
+                }
 
                     val x1_al = "x1 = ${-b} + √${-discriminant} * i/${2*a}"
                     val x2_al = "x2 = ${-b} - √${-discriminant} * i/${2*a}"
                     val nominator = "${-b}-√${b}²-4*${a}*${c}"
                     val denominator = "2*${a}"
 
+                if (binding.X3?.text!!.isEmpty()){
                     val bundleAlert = Bundle()
                     bundleAlert.putString("x1alert",x1_al)
                     bundleAlert.putString("x2alert",x2_al)
@@ -354,7 +361,6 @@ class SquareFragment : Fragment() {
                     denominator_al.text = bundleAlert.getString("denominator")
                     alertDialog.show()
                 }
-
             }
 
         }

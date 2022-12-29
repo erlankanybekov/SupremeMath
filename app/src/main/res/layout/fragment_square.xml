@@ -19,10 +19,8 @@
         android:minWidth="48dp"
         android:maxLength="4"
         android:textSize="15sp"
-
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
