@@ -7,8 +7,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -16,6 +14,7 @@ import com.aghajari.graphview.AXGraphFormula
 import com.aghajari.graphview.AXGraphOptions
 import com.example.suprememath.R
 import com.example.suprememath.databinding.FragmentSquareBinding
+import kotlin.math.pow
 import kotlin.math.sqrt
 
 
@@ -27,7 +26,7 @@ class SquareFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentSquareBinding.inflate(inflater,container,false)
         return binding.root
     }
@@ -60,14 +59,12 @@ class SquareFragment : Fragment() {
         options.yDividerInterval = 0.5f
         options.maxZoom = 6f
         options.minZoom = 0.95f
-        options.textPaint.color = Color.BLUE;
+        options.textPaint.color = Color.BLUE
         options.gridLinePaint.color = Color.GRAY
 
-        graphView.graphOptions = options;
+        graphView.graphOptions = options
 
-       if (true){
-           PlotXSquare()
-       }
+        PlotXSquare()
     }
 
 
@@ -93,7 +90,7 @@ class SquareFragment : Fragment() {
             options.yDividerInterval = 0.5f
             options.maxZoom = 6f
             options.minZoom = 0.75f
-            options.textPaint.color = Color.BLUE;
+            options.textPaint.color = Color.BLUE
             options.gridLinePaint.color = Color.GRAY
 
             graphView.graphOptions = options
@@ -103,7 +100,7 @@ class SquareFragment : Fragment() {
                 graphView.addFormula(object : AXGraphFormula() {
                     // x^2
                     override fun function(x: Float): Float {
-                        return ((xsquare * Math.pow(x.toDouble(), 2.0)) + (firstX * x) + c).toFloat()
+                        return ((xsquare * x.toDouble().pow(2.0)) + (firstX * x) + c).toFloat()
                     }
 
                     override fun init() {
@@ -122,7 +119,7 @@ class SquareFragment : Fragment() {
                 graphView.addFormula(object : AXGraphFormula() {
                     // x^3
                     override fun function(x: Float): Float {
-                        return ((xCube*Math.pow(x.toDouble(),3.0)+xsquare * Math.pow(x.toDouble(), 2.0)) + (firstX * x) + c).toFloat()
+                        return ((xCube* x.toDouble().pow(3.0) +xsquare * x.toDouble().pow(2.0)) + (firstX * x) + c).toFloat()
                     }
 
                 })
@@ -139,9 +136,9 @@ class SquareFragment : Fragment() {
         binding.digit1.setText("")
 
 
-        binding.Discriminant.setText("D=?")
-        binding.ansX.setText("x1=?")
-        binding.ansX2.setText("x2=?")
+        binding.Discriminant.text = "D=?"
+        binding.ansX.text = "x1=?"
+        binding.ansX2.text = "x2=?"
 
         val graphView = binding.graphView
         val options = AXGraphOptions(requireContext())
@@ -153,8 +150,8 @@ class SquareFragment : Fragment() {
         options.yDividerInterval = 0.5f
         options.maxZoom = 6f
         options.minZoom = 0.75f
-        options.textPaint.setColor(Color.BLUE);
-        options.gridLinePaint.setColor(Color.GRAY)
+        options.textPaint.color = Color.BLUE
+        options.gridLinePaint.color = Color.GRAY
 
         graphView.graphOptions = options
         graphView.clearFormulas()
@@ -162,22 +159,23 @@ class SquareFragment : Fragment() {
     }
 
     private fun discriminant() {
-        if (binding.firstX.text.toString().equals("")||
-            binding.X2.text.toString().equals("")||
-            binding.C.text.toString().equals("")||
-            binding.digit1.text.toString().equals("")
+        if (binding.firstX.text.toString() == "" ||
+            binding.X2.text.toString() == "" ||
+            binding.C.text.toString() == "" ||
+            binding.digit1.text.toString() == ""
         ) {
             Toast.makeText(requireContext(),"Заполните пустые поля", Toast.LENGTH_SHORT).show()
-        } else if (binding.firstX.text.toString().equals(".")||
-            binding.X2.text.toString().equals(".")||
-            binding.C.text.toString().equals(".")||
-            binding.digit1.text.toString().equals(".")
+        } else if (binding.firstX.text.toString() == "." ||
+            binding.X2.text.toString() == "." ||
+            binding.C.text.toString() == "." ||
+            binding.digit1.text.toString() == "."
         ) {
             Toast.makeText(requireContext(),".", Toast.LENGTH_SHORT).show()
-        } else if (binding.firstX.text.toString().equals("-")||
-            binding.X2.text.toString().equals("-")||
-            binding.C.text.toString().equals("-")||
-            binding.digit1.text.toString().equals("-")){
+        } else if (binding.firstX.text.toString() == "-" ||
+            binding.X2.text.toString() == "-" ||
+            binding.C.text.toString() == "-" ||
+            binding.digit1.text.toString() == "-"
+        ){
             Toast.makeText(requireContext(),"-", Toast.LENGTH_SHORT).show()
         }
         else{
@@ -190,9 +188,9 @@ class SquareFragment : Fragment() {
             val c = c1+(-digit1)
             val c23 = (c1+(-digit1)).toString()
 
-            var discriminant = ((b*b)-4*a*c).toDouble()
+            val discriminant = ((b*b)-4*a*c).toDouble()
             if (binding.X3?.text!!.isEmpty()){
-                binding.Discriminant.setText("D=$discriminant")
+                binding.Discriminant.text = "D=$discriminant"
             }
 
 
@@ -201,11 +199,11 @@ class SquareFragment : Fragment() {
 
                 val x2 = (((-b)- sqrt(discriminant))/(2*a)).toString()
                 if (x1.length>4||x2.length>4 && binding.X3?.text!!.isEmpty()){
-                    binding.ansX2.setText("x2 = ${-b}-√${discriminant}/${2*a}")
-                    binding.ansX.setText("x1 = ${-b}+√${discriminant}/${2*a}")
+                    binding.ansX2.text = "x2 = ${-b}-√${discriminant}/${2*a}"
+                    binding.ansX.text = "x1 = ${-b}+√${discriminant}/${2*a}"
                 }else{
-                    binding.ansX2.setText("x2 = ${x2}")
-                    binding.ansX.setText("x1 = ${x1}")
+                    binding.ansX2.text = "x2 = ${x2}"
+                    binding.ansX.text = "x1 = ${x1}"
                 }
 
                 val xsquare = binding.X2.text.toString()
@@ -249,20 +247,17 @@ class SquareFragment : Fragment() {
                     denominator_al.text = bundleAlert.getString("denominator")
                     alertDialog.show()
                 }
-
-
-
             }
             if (discriminant.equals(0.0)){
                 val x1 = (((-b)+ sqrt(0.0))/(2*a)).toString()
 
                 val x2 = (((-b)- sqrt(discriminant))/(2*a)).toString()
                 if (x1.length>4||x2.length>4 && binding.X3?.text!!.isEmpty()){
-                    binding.ansX2.setText("x2 = ${-b}-√${0}/${2*a}")
-                    binding.ansX.setText("x1 = ${-b}+√${0}/${2*a}")
+                    binding.ansX2.text = "x2 = ${-b}-√${0}/${2*a}"
+                    binding.ansX.text = "x1 = ${-b}+√${0}/${2*a}"
                 }else{
-                    binding.ansX2.setText("x2 = ${x2}")
-                    binding.ansX.setText("x1 = ${x1}")
+                    binding.ansX2.text = "x2 = ${x2}"
+                    binding.ansX.text = "x1 = ${x1}"
                 }
 
                 val xsquare = binding.X2.text.toString()
@@ -312,8 +307,8 @@ class SquareFragment : Fragment() {
 
                 val x2 = (((-b)- sqrt(discriminant))/(2*a)).toString()
                 if (binding.X3?.text!!.isEmpty()){
-                    binding.ansX.setText("x1 = $x1")
-                    binding.ansX2.setText("x2 = $x2")
+                    binding.ansX.text = "x1 = $x1"
+                    binding.ansX2.text = "x2 = $x2"
                 }
 
                 val xsquare = binding.X2.text.toString()
@@ -328,8 +323,8 @@ class SquareFragment : Fragment() {
                 parentFragmentManager.setFragmentResult("xs",bundle)
 
                 if (binding.X3?.text!!.isEmpty()){
-                    binding.ansX.setText("x1 = ${-b} + √${-discriminant} * i/${2*a}")
-                    binding.ansX2.setText("x2 = ${-b} - √${-discriminant} * i/${2*a}")
+                    binding.ansX.text = "x1 = ${-b} + √${-discriminant} * i/${2*a}"
+                    binding.ansX2.text = "x2 = ${-b} - √${-discriminant} * i/${2*a}"
                 }
 
                     val x1_al = "x1 = ${-b} + √${-discriminant} * i/${2*a}"
