@@ -1,4 +1,4 @@
-package com.example.mathsolver.models
+package com.example.suprememath.models
 
 class Model(currentTimeMillis: Long) {
 

@@ -19,4 +19,13 @@
         <item>solve matrix</item>
         <item>solve x,y system</item>
     </string-array>
+
+    <string-array name="radians">
+        <item>pi</item>
+        <item>pi/2</item>
+        <item>pi/4</item>
+        <item>pi/6</item>
+        <item>pi/8</item>
+    </string-array>
+
 </resources>

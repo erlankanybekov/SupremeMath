@@ -7,6 +7,49 @@
     android:background="@drawable/backgr"
     tools:context=".ui.square_equation.SquareFragment">
 
+        <EditText
+        android:id="@+id/X_3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="55dp"
+        android:background="#404243"
+            android:layout_marginStart="10dp"
+        android:inputType="numberDecimal|numberSigned"
+        android:textAlignment="center"
+        android:minWidth="48dp"
+        android:maxLength="4"
+        android:textSize="15sp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+
+    <TextView
+    android:id="@+id/txt3"
+    android:layout_width="23dp"
+    android:layout_height="25dp"
+    android:text="x³"
+    android:textColor="#FBFAFA"
+    android:textSize="20sp"
+    android:layout_marginStart="10dp"
+    app:layout_constraintBottom_toBottomOf="@id/X_3"
+    app:layout_constraintStart_toEndOf="@+id/X_3"
+    tools:ignore="HardcodedText" />
+
+    <TextView
+    android:id="@+id/txtPlus_3"
+    android:layout_width="20dp"
+    android:layout_height="27dp"
+    android:text="±"
+    android:textColor="#FBFAFA"
+    android:textSize="28sp"
+    android:layout_marginStart="0dp"
+    app:layout_constraintBottom_toBottomOf="@id/txt3"
+    app:layout_constraintStart_toEndOf="@+id/txt3"
+    tools:ignore="HardcodedText" />
+
+
     <EditText
     android:id="@+id/X2"
     android:layout_width="30dp"
@@ -18,14 +61,15 @@
     android:minWidth="48dp"
         android:maxLength="4"
     android:textSize="15sp"
+        android:layout_marginStart="60dp"
     app:layout_constraintStart_toStartOf="@id/graph_view"
     app:layout_constraintTop_toTopOf="parent"
     tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/solvex2"
-        app:cornerRadius="50dp"
         android:text="solve"
+        app:cornerRadius="50dp"
         android:layout_marginEnd="20dp"
         android:layout_marginTop="70dp"
         android:textColor="@color/white"
@@ -39,8 +83,9 @@
 
     <com.aghajari.graphview.AXGraphView
         android:id="@+id/graph_view"
-        app:layout_constraintBottom_toTopOf="@+id/Discriminant"
+        app:layout_constraintTop_toBottomOf="@+id/txtPlus"
         android:backgroundTint="@color/white"
+        android:layout_marginTop="36dp"
         android:layout_marginHorizontal="35dp"
         android:background = "@color/white"
         android:layout_width="match_parent"
@@ -74,19 +119,20 @@
         app:layout_constraintTop_toBottomOf="@id/Discriminant"
         tools:ignore="HardcodedText" />
 
-    <TextView
-        android:id="@+id/Discriminant"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="D = ?"
-        android:textColor="#00B0FF"
-        android:textSize="25sp"
-        android:fontFamily="@font/modern_antiqua"
-        android:visibility="visible"
-        android:layout_marginBottom="300dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginStart="30dp"
-        app:layout_constraintStart_toStartOf="@id/graph_view" />
+
+          <TextView
+          android:id="@+id/Discriminant"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="D = ?"
+          android:textColor="#00B0FF"
+          android:textSize="25sp"
+          android:fontFamily="@font/modern_antiqua"
+          android:layout_marginBottom="300dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          android:layout_marginStart="30dp"
+          app:layout_constraintStart_toStartOf="@id/graph_view" />
+
 
 
     <TextView
@@ -134,7 +180,7 @@
         android:text="±"
         android:textColor="#FBFAFA"
         android:textSize="28sp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="5dp"
         app:layout_constraintBottom_toBottomOf="@id/txt2"
         app:layout_constraintStart_toEndOf="@+id/txtX"
         tools:ignore="HardcodedText" />
@@ -155,7 +201,6 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-
     <TextView
         android:id="@+id/txtX"
         android:layout_width="23dp"
@@ -172,7 +217,7 @@
         android:id="@+id/C"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="55dp"
         android:background="#404243"
         android:minWidth="48dp"
@@ -191,7 +236,7 @@
         android:text="="
         android:textColor="#F8F4F4"
         android:textSize="20sp"
-        android:layout_marginStart="62dp"
+        android:layout_marginStart="42dp"
         app:layout_constraintStart_toStartOf="@id/C"
         app:layout_constraintBottom_toBottomOf="@id/C"
         app:layout_constraintStart_toEndOf="@+id/C"
@@ -205,13 +250,13 @@
         android:background="#404243"
         android:textAlignment="center"
         android:minWidth="48dp"
+        android:layout_marginEnd="30dp"
         android:maxLength="4"
         android:inputType="numberDecimal|numberSigned"
         android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@id/graph_view"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/txtequal"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
