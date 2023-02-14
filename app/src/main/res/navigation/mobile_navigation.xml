@@ -9,7 +9,13 @@
         android:id="@+id/navigation_home"
         android:name="com.example.suprememath.ui.matrix.MatrixFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_matrix" />
+        tools:layout="@layout/fragment_matrix" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_dashboard"
+            app:destination="@id/navigation_dashboard"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_right" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_dashboard"

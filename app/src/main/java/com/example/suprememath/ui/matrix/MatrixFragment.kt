@@ -195,8 +195,6 @@ class MatrixFragment : Fragment() {
             binding.ansZ.visibility = View.GONE
 
         }
-
-
     }
 
     private fun BtnClear() {

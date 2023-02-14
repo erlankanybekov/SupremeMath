@@ -49,12 +49,18 @@ class MathFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.BtnSend.setOnClickListener{
-            mathViewModel.mathExpress(binding.editText.text.toString().trim()).observe(viewLifecycleOwner,{
+            mathViewModel.mathExpress(binding.editText.text.toString().trim()).observe(viewLifecycleOwner) {
                 binding.tvResult?.text = "$it"
-            })
+            }
         }
-        binding.editBtn.setOnClickListener {
 
+
+        binding.editBtn.setOnClickListener {
+            mathViewModel.getBackEnd().observe(viewLifecycleOwner){
+//                val imgBack = it.imgUrl as Bitmap
+//                binding.imgBack?.setImageBitmap(imgBack)
+//                binding.txtBack?.text = it.description
+            }
         }
         binding.floatingBtn.setOnClickListener {
             onBtnClicked()

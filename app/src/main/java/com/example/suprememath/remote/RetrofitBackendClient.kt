@@ -6,8 +6,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-private const val BASE_URL = "http://api.mathjs.org/v4/"
-class RetrofitClient {
+private const val BASE_URL = "http://127.0.0.1:8125/"
+class RetrofitBackendClient {
 
     companion object{
         fun create(): ApiService {

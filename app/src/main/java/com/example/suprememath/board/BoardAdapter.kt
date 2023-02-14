@@ -52,8 +52,6 @@ class BoardAdapter(private val startClick: () -> Unit) :RecyclerView.Adapter<Boa
 
     override fun getItemCount()=titles.size
 
-
-
 }
 
 

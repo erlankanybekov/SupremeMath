@@ -357,7 +357,6 @@ class SquareFragment : Fragment() {
                     alertDialog.show()
                 }
             }
-
         }
     }
 }
