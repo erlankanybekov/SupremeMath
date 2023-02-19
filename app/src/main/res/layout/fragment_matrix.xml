@@ -7,12 +7,11 @@
     android:background="@drawable/backgr"
     tools:context=".ui.matrix.MatrixFragment">
 
-
     <EditText
-        android:id="@+id/firstX"
+        android:id="@+id/x1"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="55dp"
         android:inputType="numberDecimal|numberSigned"
         android:background="#D6E4ED"
@@ -32,8 +31,8 @@
         android:textColor="#FAF6F6"
         android:textSize="20sp"
         android:layout_marginStart="5dp"
-        app:layout_constraintBottom_toBottomOf="@id/firstX"
-        app:layout_constraintStart_toEndOf="@+id/firstX"
+        app:layout_constraintBottom_toBottomOf="@id/x1"
+        app:layout_constraintStart_toEndOf="@+id/x1"
         tools:ignore="HardcodedText" />
 
     <TextView
@@ -43,14 +42,13 @@
         android:text="±"
         android:textColor="#FBFAFA"
         android:textSize="25sp"
-        android:layout_marginStart="10dp"
         app:layout_constraintBottom_toBottomOf="@id/txtX"
         app:layout_constraintStart_toEndOf="@+id/txtX"
         tools:ignore="HardcodedText" />
 
 
     <EditText
-        android:id="@+id/firstY"
+        android:id="@+id/y1"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
@@ -73,8 +71,8 @@
         android:textColor="#F8F5F5"
         android:textSize="20sp"
         android:layout_marginStart="7dp"
-        app:layout_constraintStart_toEndOf="@+id/firstY"
-        app:layout_constraintBottom_toBottomOf="@id/firstY"
+        app:layout_constraintStart_toEndOf="@+id/y1"
+        app:layout_constraintBottom_toBottomOf="@id/y1"
         tools:ignore="HardcodedText" />
 
     <TextView
@@ -87,11 +85,11 @@
         android:layout_marginStart="30dp"
         app:layout_constraintStart_toStartOf="@id/txtY"
         app:layout_constraintBottom_toBottomOf="@id/txtY"
-        app:layout_constraintStart_toEndOf="@+id/firstY"
+        app:layout_constraintStart_toEndOf="@+id/y1"
         tools:ignore="HardcodedText" />
 
     <EditText
-        android:id="@+id/thirdZ"
+        android:id="@+id/z3"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
@@ -107,6 +105,22 @@
         tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
 
+    <EditText
+        android:id="@+id/z4"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="55dp"
+        android:background="#D5E3EC"
+        android:textAlignment="center"
+        android:minWidth="48dp"
+        android:maxLength="5"
+        android:inputType="numberDecimal|numberSigned"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@id/txtplus6"
+        app:layout_constraintBottom_toBottomOf="@id/txtplus6"
+        tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
     <TextView
         android:id="@+id/txtZ"
         android:layout_width="23dp"
@@ -115,9 +129,161 @@
         android:textColor="#F8F6F6"
         android:textSize="20sp"
         android:layout_marginStart="5dp"
-        app:layout_constraintBottom_toBottomOf="@id/firstZ"
-        app:layout_constraintStart_toEndOf="@id/firstZ"
+        app:layout_constraintBottom_toBottomOf="@id/z1"
+        app:layout_constraintStart_toEndOf="@id/z1"
         tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/txtk"
+        android:layout_width="23dp"
+        android:layout_height="25dp"
+        android:text="k"
+        android:textColor="#F8F6F6"
+        android:textSize="20sp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toBottomOf="@id/k1"
+        app:layout_constraintStart_toEndOf="@id/k1"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/txtk2"
+        android:layout_width="23dp"
+        android:layout_height="25dp"
+        android:text="k"
+        android:textColor="#F8F6F6"
+        android:textSize="20sp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toBottomOf="@id/k2"
+        app:layout_constraintStart_toEndOf="@id/k2"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/txtk3"
+        android:layout_width="23dp"
+        android:layout_height="25dp"
+        android:text="k"
+        android:textColor="#F8F6F6"
+        android:textSize="20sp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toBottomOf="@id/k3"
+        app:layout_constraintStart_toEndOf="@id/k3"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/txtk4"
+        android:layout_width="23dp"
+        android:layout_height="25dp"
+        android:text="k"
+        android:textColor="#F8F6F6"
+        android:textSize="20sp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toBottomOf="@id/k4"
+        app:layout_constraintStart_toEndOf="@id/k4"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/txteq"
+        android:layout_width="23dp"
+        android:layout_height="25dp"
+        android:text="="
+        android:textColor="#F8F6F6"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/k1"
+        app:layout_constraintStart_toEndOf="@id/txtk"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/txteq2"
+        android:layout_width="23dp"
+        android:layout_height="25dp"
+        android:text="="
+        android:textColor="#F8F6F6"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/k2"
+        app:layout_constraintStart_toEndOf="@id/txtk2"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/txteq3"
+        android:layout_width="23dp"
+        android:layout_height="25dp"
+        android:text="="
+        android:textColor="#F8F6F6"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/k3"
+        app:layout_constraintStart_toEndOf="@id/txtk3"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/txteq4"
+        android:layout_width="23dp"
+        android:layout_height="25dp"
+        android:text="="
+        android:textColor="#F8F6F6"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/k4"
+        app:layout_constraintStart_toEndOf="@id/txtk4"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/dig1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="55dp"
+        android:background="#D5E3EC"
+        android:textAlignment="center"
+        android:minWidth="48dp"
+        android:maxLength="5"
+        android:inputType="numberDecimal|numberSigned"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@id/txteq"
+        app:layout_constraintBottom_toBottomOf="@id/txteq"
+        tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/dig2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="55dp"
+        android:background="#D5E3EC"
+        android:textAlignment="center"
+        android:minWidth="48dp"
+        android:maxLength="5"
+        android:inputType="numberDecimal|numberSigned"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@id/txteq2"
+        app:layout_constraintBottom_toBottomOf="@id/txteq2"
+        tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/dig3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="55dp"
+        android:background="#D5E3EC"
+        android:textAlignment="center"
+        android:minWidth="48dp"
+        android:maxLength="5"
+        android:inputType="numberDecimal|numberSigned"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@id/txteq3"
+        app:layout_constraintBottom_toBottomOf="@id/txteq3"
+        tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/dig4"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="55dp"
+        android:background="#D5E3EC"
+        android:textAlignment="center"
+        android:minWidth="48dp"
+        android:maxLength="5"
+        android:inputType="numberDecimal|numberSigned"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@id/txteq4"
+        app:layout_constraintBottom_toBottomOf="@id/txteq4"
+        tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
 
     <TextView
@@ -128,8 +294,8 @@
         android:textColor="#F8F6F6"
         android:textSize="20sp"
         android:layout_marginStart="5dp"
-        app:layout_constraintBottom_toBottomOf="@id/secondZ"
-        app:layout_constraintStart_toEndOf="@id/secondZ"
+        app:layout_constraintBottom_toBottomOf="@id/z2"
+        app:layout_constraintStart_toEndOf="@id/z2"
         tools:ignore="HardcodedText" />
     <TextView
         android:id="@+id/txtZ3"
@@ -139,30 +305,41 @@
         android:textColor="#F8F6F6"
         android:textSize="20sp"
         android:layout_marginStart="5dp"
-        app:layout_constraintBottom_toBottomOf="@id/thirdZ"
-        app:layout_constraintStart_toEndOf="@id/thirdZ"
+        app:layout_constraintBottom_toBottomOf="@id/z3"
+        app:layout_constraintStart_toEndOf="@id/z3"
         tools:ignore="HardcodedText" />
 
+    <TextView
+        android:id="@+id/txtZ4"
+        android:layout_width="23dp"
+        android:layout_height="25dp"
+        android:text="z"
+        android:textColor="#F8F6F6"
+        android:textSize="20sp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toBottomOf="@id/z4"
+        app:layout_constraintStart_toEndOf="@id/z4"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/txtequal3"
         android:layout_width="19dp"
         android:layout_height="25dp"
-        android:text="="
+        android:text="±"
         android:textColor="#F8F4F4"
         android:textSize="20sp"
         android:layout_marginStart="62dp"
-        app:layout_constraintStart_toStartOf="@id/firstZ"
-        app:layout_constraintBottom_toBottomOf="@id/firstZ"
+        app:layout_constraintStart_toStartOf="@id/z1"
+        app:layout_constraintBottom_toBottomOf="@id/z1"
         app:layout_constraintStart_toEndOf="@+id/txtY3"
         tools:ignore="HardcodedText" />
 
 
+
     <EditText
-        android:id="@+id/digit1"
+        android:id="@+id/k1"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="55dp"
         android:background="#D5E3EC"
         android:textAlignment="center"
@@ -175,10 +352,9 @@
         tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/digit2"
+        android:id="@+id/k2"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="55dp"
         android:background="#D5E3EC"
         android:textAlignment="center"
@@ -191,10 +367,9 @@
         tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/digit3"
+        android:id="@+id/k3"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="8dp"
         android:background="#D5E3EC"
         android:textAlignment="center"
         android:minWidth="48dp"
@@ -205,16 +380,30 @@
         app:layout_constraintBottom_toBottomOf="@id/txtequal6"
         tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
+    <EditText
+        android:id="@+id/k4"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="#D5E3EC"
+        android:textAlignment="center"
+        android:minWidth="48dp"
+        android:textSize="15sp"
+        android:maxLength="5"
+        android:inputType="numberDecimal|numberSigned"
+        app:layout_constraintStart_toEndOf="@id/txtequal7"
+        app:layout_constraintBottom_toBottomOf="@id/txtequal7"
+        tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
 
     <TextView
         android:id="@+id/txtequal4"
         android:layout_width="19dp"
         android:layout_height="25dp"
-        android:text="="
+        android:text="±"
         android:textColor="#F8F4F4"
         android:textSize="20sp"
         android:layout_marginStart="62dp"
-        app:layout_constraintStart_toStartOf="@id/secondZ"
+        app:layout_constraintStart_toStartOf="@id/z2"
         app:layout_constraintBottom_toBottomOf="@id/txtZ2"
         app:layout_constraintStart_toEndOf="@+id/txtZ2"
         tools:ignore="HardcodedText" />
@@ -223,20 +412,34 @@
         android:id="@+id/txtequal6"
         android:layout_width="19dp"
         android:layout_height="25dp"
-        android:text="="
+        android:text="±"
         android:textColor="#F8F4F4"
         android:textSize="20sp"
         android:layout_marginStart="62dp"
-        app:layout_constraintStart_toStartOf="@id/thirdZ"
+        app:layout_constraintStart_toStartOf="@id/z3"
         app:layout_constraintBottom_toBottomOf="@id/txtZ3"
         app:layout_constraintStart_toEndOf="@+id/txtZ3"
         tools:ignore="HardcodedText" />
-<!--  2n row  -->
+
+    <TextView
+        android:id="@+id/txtequal7"
+        android:layout_width="19dp"
+        android:layout_height="25dp"
+        android:text="±"
+        android:textColor="#F8F4F4"
+        android:textSize="20sp"
+        android:layout_marginStart="62dp"
+        app:layout_constraintStart_toStartOf="@id/z4"
+        app:layout_constraintBottom_toBottomOf="@id/txtZ4"
+        app:layout_constraintStart_toEndOf="@+id/txtZ4"
+        tools:ignore="HardcodedText" />
+    <!--  2n row  -->
+
     <EditText
-        android:id="@+id/secondX"
+        android:id="@+id/x2"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="55dp"
         android:background="#D5E3EC"
         android:minWidth="48dp"
@@ -245,14 +448,15 @@
         android:inputType="numberDecimal|numberSigned"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/firstX"
+        app:layout_constraintTop_toTopOf="@id/x1"
         tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-<!--3d row-->
+    <!--3d row-->
+
     <EditText
-        android:id="@+id/thirdX"
+        android:id="@+id/x3"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="55dp"
         android:background="#D5E4ED"
         android:minWidth="48dp"
@@ -261,7 +465,7 @@
         android:textAlignment="center"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/secondX"
+        app:layout_constraintTop_toTopOf="@id/x2"
         tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <TextView
@@ -272,8 +476,8 @@
         android:textColor="#F3F0F0"
         android:textSize="20sp"
         android:layout_marginStart="5dp"
-        app:layout_constraintBottom_toBottomOf="@id/secondX"
-        app:layout_constraintStart_toEndOf="@+id/firstX"
+        app:layout_constraintBottom_toBottomOf="@id/x2"
+        app:layout_constraintStart_toEndOf="@+id/x1"
         tools:ignore="HardcodedText" />
 
     <TextView
@@ -284,8 +488,20 @@
         android:textColor="#F3F0F0"
         android:textSize="20sp"
         android:layout_marginStart="5dp"
-        app:layout_constraintBottom_toBottomOf="@id/thirdX"
-        app:layout_constraintStart_toEndOf="@+id/thirdX"
+        app:layout_constraintBottom_toBottomOf="@id/x3"
+        app:layout_constraintStart_toEndOf="@+id/x3"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/txtX4"
+        android:layout_width="23dp"
+        android:layout_height="25dp"
+        android:text="x"
+        android:textColor="#F3F0F0"
+        android:textSize="20sp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toBottomOf="@id/x4"
+        app:layout_constraintStart_toEndOf="@+id/x4"
         tools:ignore="HardcodedText" />
 
     <TextView
@@ -295,7 +511,6 @@
         android:text="±"
         android:textColor="#F4F1F1"
         android:textSize="25sp"
-        android:layout_marginStart="10dp"
         app:layout_constraintBottom_toBottomOf="@id/txtX2"
         app:layout_constraintStart_toEndOf="@+id/txtX2"
         tools:ignore="HardcodedText" />
@@ -307,14 +522,23 @@
         android:text="±"
         android:textColor="#F4F1F1"
         android:textSize="25sp"
-        android:layout_marginStart="10dp"
         app:layout_constraintBottom_toBottomOf="@id/txtX3"
         app:layout_constraintStart_toEndOf="@+id/txtX3"
         tools:ignore="HardcodedText" />
 
+    <TextView
+        android:id="@+id/txtplus4"
+        android:layout_width="20dp"
+        android:layout_height="28dp"
+        android:text="±"
+        android:textColor="#F4F1F1"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@id/txtX4"
+        app:layout_constraintStart_toEndOf="@+id/txtX4"
+        tools:ignore="HardcodedText" />
 
     <EditText
-        android:id="@+id/secondY"
+        android:id="@+id/y2"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
@@ -326,11 +550,11 @@
         android:maxLength="5"
         android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@id/txtplus"
-        app:layout_constraintTop_toTopOf="@id/firstY"
+        app:layout_constraintTop_toTopOf="@id/y1"
         tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/thirdY"
+        android:id="@+id/y3"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
@@ -342,10 +566,24 @@
         android:textAlignment="center"
         android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@id/txtplus"
-        app:layout_constraintTop_toTopOf="@id/secondY"
+        app:layout_constraintTop_toTopOf="@id/y2"
         tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-
+    <EditText
+        android:id="@+id/y4"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="55dp"
+        android:background="#D5E3EC"
+        android:minWidth="48dp"
+        android:maxLength="5"
+        android:inputType="numberDecimal|numberSigned"
+        android:textAlignment="center"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@id/txtplus"
+        app:layout_constraintTop_toTopOf="@id/y3"
+        tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/txtY2"
@@ -355,8 +593,8 @@
         android:textColor="#FBFBFB"
         android:textSize="20sp"
         android:layout_marginStart="7dp"
-        app:layout_constraintStart_toEndOf="@+id/secondY"
-        app:layout_constraintBottom_toBottomOf="@id/secondY"
+        app:layout_constraintStart_toEndOf="@+id/y2"
+        app:layout_constraintBottom_toBottomOf="@id/y2"
         tools:ignore="HardcodedText" />
 
     <TextView
@@ -367,8 +605,20 @@
         android:textColor="#FBFBFB"
         android:textSize="20sp"
         android:layout_marginStart="7dp"
-        app:layout_constraintStart_toEndOf="@+id/thirdY"
-        app:layout_constraintBottom_toBottomOf="@id/thirdY"
+        app:layout_constraintStart_toEndOf="@+id/y3"
+        app:layout_constraintBottom_toBottomOf="@id/y3"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/txtY4"
+        android:layout_width="23dp"
+        android:layout_height="25dp"
+        android:text="y"
+        android:textColor="#FBFBFB"
+        android:textSize="20sp"
+        android:layout_marginStart="7dp"
+        app:layout_constraintStart_toEndOf="@+id/y4"
+        app:layout_constraintBottom_toBottomOf="@id/y4"
         tools:ignore="HardcodedText" />
 
     <TextView
@@ -381,7 +631,7 @@
         android:layout_marginStart="30dp"
         app:layout_constraintStart_toStartOf="@id/txtY2"
         app:layout_constraintBottom_toBottomOf="@id/txtY2"
-        app:layout_constraintStart_toEndOf="@+id/secondY"
+        app:layout_constraintStart_toEndOf="@+id/y2"
         tools:ignore="HardcodedText" />
 
     <TextView
@@ -394,11 +644,24 @@
         android:layout_marginStart="30dp"
         app:layout_constraintStart_toStartOf="@id/txtY3"
         app:layout_constraintBottom_toBottomOf="@id/txtY3"
-        app:layout_constraintStart_toEndOf="@+id/secondY"
+        app:layout_constraintStart_toEndOf="@+id/y2"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/txtplus6"
+        android:layout_width="20dp"
+        android:layout_height="28dp"
+        android:text="±"
+        android:textColor="#F8F6F6"
+        android:textSize="25sp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toStartOf="@id/txtY4"
+        app:layout_constraintBottom_toBottomOf="@id/txtY4"
+        app:layout_constraintStart_toEndOf="@+id/y4"
         tools:ignore="HardcodedText" />
 
     <EditText
-        android:id="@+id/secondZ"
+        android:id="@+id/z2"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
@@ -414,7 +677,7 @@
         tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/firstZ"
+        android:id="@+id/z1"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
@@ -430,18 +693,11 @@
         tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
 
-
-
-
-
-
-
-
     <TextView
         android:id="@+id/ansX"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="x = ?"
+        android:text="ans = ?"
         android:textColor="@color/white"
         android:textSize="25sp"
         android:visibility="visible"
@@ -452,28 +708,45 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText" />
 
+<!--  4th row   -->
+
+    <EditText
+        android:id="@+id/x4"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="55dp"
+        android:background="#D5E4ED"
+        android:minWidth="48dp"
+        android:maxLength="5"
+        android:inputType="numberDecimal|numberSigned"
+        android:textAlignment="center"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/x3"
+        tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
 
-<com.google.android.material.textfield.TextInputLayout
-    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:id="@+id/editLayout"
         android:layout_marginTop="90dp"
         android:hint="@string/buttons"
         android:layout_marginHorizontal="42dp"
-        app:layout_constraintTop_toBottomOf="@+id/ansZ"
+        app:layout_constraintTop_toBottomOf="@+id/ansX"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <AutoCompleteTextView
-        android:id="@+id/dropMenu"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:inputType="none"
-        android:padding="16dp"
-        android:fontFamily="@font/modern_antiqua"
-        android:textColor="@color/white"
-        tools:ignore="LabelFor,SpeakableTextPresentCheck" />
-   </com.google.android.material.textfield.TextInputLayout>
+        <AutoCompleteTextView
+            android:id="@+id/dropMenu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="none"
+            android:padding="16dp"
+            android:fontFamily="@font/modern_antiqua"
+            android:textColor="@color/white"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 
     <Button
@@ -486,37 +759,11 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="wrap_content"
         android:background="@drawable/gradient"
         android:layout_marginStart="14dp"
         android:layout_height="wrap_content"
         tools:ignore="HardcodedText" />
 
-
-    <TextView
-        android:id="@+id/ansY"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="y = ?"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ansX"
-        tools:ignore="HardcodedText" />
-
-    <TextView
-        android:id="@+id/ansZ"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="z = ?"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ansY"
-        tools:ignore="HardcodedText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
