@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.suprememath.ui.square_equation.SquareFragment"
+        android:name="com.example.suprememath.ui.equations.SquareFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_square" />
 

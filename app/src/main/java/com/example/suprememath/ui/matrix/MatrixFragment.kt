@@ -41,7 +41,7 @@ class MatrixFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.ClearBtn.setOnClickListener {
-//            BtnClear()
+            BtnClear()
         }
         binding.dropMenu.onItemClickListener =
             AdapterView.OnItemClickListener { p0, p1, p2, p3 ->
@@ -63,6 +63,35 @@ class MatrixFragment : Fragment() {
                     }
                 }
             }
+    }
+
+    private fun BtnClear() {
+        with(binding){
+            x1?.setText("")
+            x2?.setText("")
+            x3?.setText("")
+            x4?.setText("")
+
+            y1?.setText("")
+            y2?.setText("")
+            y3?.setText("")
+            y4?.setText("")
+
+            z1?.setText("")
+            z2?.setText("")
+            z3?.setText("")
+            z4?.setText("")
+
+            k1?.setText("")
+            k2?.setText("")
+            k3?.setText("")
+            k4?.setText("")
+
+            dig1?.setText("")
+            dig2?.setText("")
+            dig3?.setText("")
+            dig4?.setText("")
+        }
     }
 
     @SuppressLint("SetTextI18n")

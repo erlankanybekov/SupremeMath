@@ -1,4 +1,4 @@
-package com.example.suprememath.ui.square_equation
+package com.example.suprememath.ui.equations
 
 import android.app.Dialog
 import android.graphics.Color
@@ -43,7 +43,11 @@ class SquareFragment : Fragment() {
         }
 
         binding.solvex2.setOnClickListener {
+            try {
                 discriminant()
+            }catch (e:Exception){
+                e.printStackTrace()
+            }
         }
         binding.ClearBtn.setOnClickListener {
             ClearBtn()
@@ -63,8 +67,11 @@ class SquareFragment : Fragment() {
         options.gridLinePaint.color = Color.GRAY
 
         graphView.graphOptions = options
-
-        PlotXSquare()
+        try {
+            PlotXSquare()
+        }catch (e:Exception){
+            e.printStackTrace()
+        }
     }
 
 
@@ -95,12 +102,14 @@ class SquareFragment : Fragment() {
 
             graphView.graphOptions = options
 
-
             if (binding.X3?.text!!.isEmpty()){
+                square_visible()
                 graphView.addFormula(object : AXGraphFormula() {
+
                     // x^2
                     override fun function(x: Float): Float {
                         return ((xsquare * x.toDouble().pow(2.0)) + (firstX * x) + c).toFloat()
+
                     }
 
                     override fun init() {
@@ -109,11 +118,11 @@ class SquareFragment : Fragment() {
                         addCustomPoint(x2, 0f)
 
                     }
+
                 })
             }
-
-
             if (binding.X3?.text!!.isNotEmpty()){
+                square_invisible()
                 val xCube = binding.X3?.text.toString().toFloat()
 
                 graphView.addFormula(object : AXGraphFormula() {
@@ -123,22 +132,60 @@ class SquareFragment : Fragment() {
                     }
 
                 })
+                IntervalFunc(xCube, xsquare, firstX, c)
             }
-
-
         }
     }
 
+    private fun IntervalFunc(
+        xCube: Float,
+        xsquare: Float,
+        firstX: Float,
+        c: Float,
+    ) {
+        val func: HalfMidMethod.HalfMidFunction = object : HalfMidMethod.HalfMidFunction {
+            override fun f(x: Double): Double {
+                return ((xCube * x.pow(3.0) + xsquare * x.pow(2.0)) + (firstX * x) + c)
+            }
+        }
+
+        try {
+            binding.ansInterval?.text = HalfMidMethod.getRoot(
+                func, binding.intervalA?.text.toString().toDouble(),
+                binding.intervalB?.text.toString().toDouble()
+            ).toString()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+
+    private fun square_visible() {
+        binding.Discriminant.visibility = View.VISIBLE
+        binding.ansX.visibility = View.VISIBLE
+        binding.ansX2.visibility = View.VISIBLE
+    }
+    private fun square_invisible() {
+        binding.Discriminant.visibility = View.GONE
+        binding.ansX.visibility = View.GONE
+        binding.ansX2.visibility = View.GONE
+    }
+
     private fun ClearBtn() {
-        binding.X2.setText("")
-        binding.firstX.setText("")
-        binding.C.setText("")
-        binding.digit1.setText("")
+        with(binding){
+            X2.setText("")
+            firstX.setText("")
+            C.setText("")
+            digit1.setText("")
 
+            ansInterval?.setText("")
+            Discriminant.text = "D=?"
+            ansX.text = "x1=?"
+            ansX2.text = "x2=?"
 
-        binding.Discriminant.text = "D=?"
-        binding.ansX.text = "x1=?"
-        binding.ansX2.text = "x2=?"
+            intervalA?.setText("")
+            intervalB?.setText("")
+        }
+
 
         val graphView = binding.graphView
         val options = AXGraphOptions(requireContext())
