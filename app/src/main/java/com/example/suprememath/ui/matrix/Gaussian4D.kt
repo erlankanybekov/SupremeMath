@@ -117,13 +117,7 @@ internal object GFG4D {
             ansy = x[1]
             ansz = x[2]
             ansk = x[3]
-            println()
         }
-        println("_________")
-        println(ansx)
-        println(ansy)
-        println(ansz)
-        println(ansk)
     }
 
     // Driver program
@@ -131,12 +125,12 @@ internal object GFG4D {
     fun main(args: Array<String>) {
 
         /* input matrix */
-        val mat = arrayOf(
-            doubleArrayOf(6.1,6.2,-6.3,6.4,6.5),
-            doubleArrayOf(1.1,-1.5,2.2,-3.8,4.2),
-            doubleArrayOf(5.1,-5.0,4.9,-4.8,4.7),
-            doubleArrayOf(1.8,1.9,2.0,-2.1,2.2),
-        )
-        gaussianElimination(mat)
+//        val mat = arrayOf(
+//            doubleArrayOf(6.1,6.2,-6.3,6.4,6.5),
+//            doubleArrayOf(1.1,-1.5,2.2,-3.8,4.2),
+//            doubleArrayOf(5.1,-5.0,4.9,-4.8,4.7),
+//            doubleArrayOf(1.8,1.9,2.0,-2.1,2.2),
+//        )
+//        gaussianElimination(mat)
     }
 }

@@ -115,20 +115,18 @@ internal object GFG2D {
             ansy = x[1]
             println()
         }
-        println("_________")
-        println(ansx)
-        println(ansy)
+
     }
 
     // Driver program
     @JvmStatic
     fun main(args: Array<String>) {
 
-        /* input matrix */
-        val mat = arrayOf(
-            doubleArrayOf(6.1,6.2,-6.3),
-            doubleArrayOf(1.1,-1.5,2.2)
-        )
-        gaussianElimination2D(mat)
+//        /* input matrix */
+//        val mat = arrayOf(
+//            doubleArrayOf(6.1,6.2,-6.3),
+//            doubleArrayOf(1.1,-1.5,2.2)
+//        )
+//        gaussianElimination2D(mat)
     }
 }

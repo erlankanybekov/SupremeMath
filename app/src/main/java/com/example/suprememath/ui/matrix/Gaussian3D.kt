@@ -115,24 +115,19 @@ internal object GFG3D {
             ansx = x[0]
             ansy = x[1]
             ansz = x[2]
-            println()
         }
-        println("_________")
-        println(ansx)
-        println(ansy)
-        println(ansz)
     }
 
     // Driver program
     @JvmStatic
     fun main(args: Array<String>) {
 
-        /* input matrix */
-        val mat = arrayOf(
-            doubleArrayOf(6.1,6.2,-6.3,6.4,),
-            doubleArrayOf(1.1,-1.5,2.2,-3.8),
-            doubleArrayOf(5.1,-5.0,4.9,-4.8)
-        )
-        gaussianElimination3D(mat)
+//        /* input matrix */
+//        val mat = arrayOf(
+//            doubleArrayOf(6.1,6.2,-6.3,6.4,),
+//            doubleArrayOf(1.1,-1.5,2.2,-3.8),
+//            doubleArrayOf(5.1,-5.0,4.9,-4.8)
+//        )
+//        gaussianElimination3D(mat)
     }
 }
