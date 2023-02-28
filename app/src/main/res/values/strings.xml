@@ -17,6 +17,7 @@
 
     <string-array name="sovles">
         <item>solve matrix</item>
+        <item>solve x,y,z system</item>
         <item>solve x,y system</item>
     </string-array>
 

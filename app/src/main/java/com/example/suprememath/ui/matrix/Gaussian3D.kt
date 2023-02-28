@@ -1,13 +1,14 @@
-internal object GFG {
-    var N = 4 // Number of unknowns
+package com.example.suprememath.ui.matrix
+
+internal object GFG3D {
+    var N = 3 // Number of unknowns
 
     var ansx = 0.0
     var ansy = 0.0
     var ansz = 0.0
-    var ansk = 0.0
 
     // function to get matrix content
-    fun gaussianElimination(mat: Array<DoubleArray>) : String {
+    fun gaussianElimination3D(mat: Array<DoubleArray>) : String {
 
         /* reduction into r.e.f. */
         val singular_flag = forwardElim(mat)
@@ -114,14 +115,12 @@ internal object GFG {
             ansx = x[0]
             ansy = x[1]
             ansz = x[2]
-            ansk = x[3]
             println()
         }
         println("_________")
         println(ansx)
         println(ansy)
         println(ansz)
-        println(ansk)
     }
 
     // Driver program
@@ -130,11 +129,10 @@ internal object GFG {
 
         /* input matrix */
         val mat = arrayOf(
-            doubleArrayOf(6.1,6.2,-6.3,6.4,6.5),
-            doubleArrayOf(1.1,-1.5,2.2,-3.8,4.2),
-            doubleArrayOf(5.1,-5.0,4.9,-4.8,4.7),
-            doubleArrayOf(1.8,1.9,2.0,-2.1,2.2),
+            doubleArrayOf(6.1,6.2,-6.3,6.4,),
+            doubleArrayOf(1.1,-1.5,2.2,-3.8),
+            doubleArrayOf(5.1,-5.0,4.9,-4.8)
         )
-        gaussianElimination(mat).toString()
+        gaussianElimination3D(mat)
     }
 }
