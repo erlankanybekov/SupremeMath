@@ -17,14 +17,15 @@ import com.example.suprememath.ui.matrix.GFG3D.gaussianElimination3D
 
 class MatrixFragment : Fragment() {
 
-    private lateinit var binding: FragmentMatrixBinding
+    private val binding: FragmentMatrixBinding by lazy(LazyThreadSafetyMode.NONE) {
+        FragmentMatrixBinding.inflate(layoutInflater)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        binding = FragmentMatrixBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -47,15 +48,14 @@ class MatrixFragment : Fragment() {
                 val item = p0?.getItemAtPosition(p2).toString()
 
                 when (item) {
-
                     "solve matrix" -> {
                         try {
                             Gaussian4D()
                         } catch (e: Exception) {
                             e.printStackTrace()
                         }
-//
                     }
+
                     "solve x,y,z system" -> {
                         try {
                             Gaussian3D()
@@ -63,6 +63,7 @@ class MatrixFragment : Fragment() {
                             e.printStackTrace()
                         }
                     }
+
                     "solve x,y system" -> {
                         try {
                             Gaussian2D()
@@ -76,10 +77,8 @@ class MatrixFragment : Fragment() {
 
     @SuppressLint("SetTextI18n")
     private fun Gaussian2D() {
-        with(binding){
-
+        with(binding) {
             nullcheck2D()
-
             val mat = arrayOf(
                 doubleArrayOf(
                     x1?.text.toString().toDouble(),
@@ -97,7 +96,6 @@ class MatrixFragment : Fragment() {
                     "y = ${GFG2D.ansy}\n"
 
         }
-
     }
 
     @SuppressLint("SetTextI18n")
@@ -105,7 +103,6 @@ class MatrixFragment : Fragment() {
         /* input matrix */
         with(binding) {
             nullcheck3D()
-
             val mat = arrayOf(
                 doubleArrayOf(
                     x1?.text.toString().toDouble(),
@@ -131,7 +128,6 @@ class MatrixFragment : Fragment() {
                     "y = ${GFG3D.ansy}\n" +
                     "z = ${GFG3D.ansz}\n"
         }
-
     }
 
     private fun FragmentMatrixBinding.nullcheck3D() {
@@ -177,12 +173,9 @@ class MatrixFragment : Fragment() {
 
     @SuppressLint("SetTextI18n")
     private fun Gaussian4D() {
-
         /* input matrix */
         with(binding) {
-
             nullcheck4D()
-
             val mat = arrayOf(
                 doubleArrayOf(
                     x1?.text.toString().toDouble(),
@@ -263,5 +256,4 @@ class MatrixFragment : Fragment() {
             Toast.makeText(requireContext(), "заполните все поля", Toast.LENGTH_SHORT).show()
         }
     }
-
 }

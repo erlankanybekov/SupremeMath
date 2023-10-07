@@ -1,4 +1,4 @@
-package com.example.suprememath
+package com.example.suprememath.utils
 
 import android.content.Context
 

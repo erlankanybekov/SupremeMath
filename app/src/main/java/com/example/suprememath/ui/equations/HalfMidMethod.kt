@@ -42,16 +42,17 @@ internal object HalfMidMethod {
     fun getRoot(y: HalfMidFunction, left: Double, right: Double): Double {
         return getRoot(y, left, getMiddle(left, right), right)
     }
-        @JvmStatic
-        fun main(arvg: Array<String>) {
-            val func: HalfMidFunction = object : HalfMidFunction {
-                override fun f(x: Double): Double {
-                    return Math.pow(x,3.0)+3*Math.pow(x,2.0)-3.5
-                }
+
+    @JvmStatic
+    fun main(arvg: Array<String>) {
+        val func: HalfMidFunction = object : HalfMidFunction {
+            override fun f(x: Double): Double {
+                return Math.pow(x, 3.0) + 3 * Math.pow(x, 2.0) - 3.5
             }
-            println("x^3+3*x^2-3.5=0\n" +
-                    "x between left and half " + getRoot(func, -2.0, -1.0))
-
         }
-
+        println(
+            "x^3+3*x^2-3.5=0\n" +
+                    "x between left and half " + getRoot(func, -2.0, -1.0)
+        )
+    }
 }

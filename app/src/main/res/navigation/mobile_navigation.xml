@@ -30,7 +30,7 @@
         tools:layout="@layout/fragment_math_api" />
     <fragment
         android:id="@+id/boardFragment"
-        android:name="com.example.suprememath.board.BoardFragment"
+        android:name="com.example.suprememath.ui.board.BoardFragment"
         android:label="fragment_board"
         tools:layout="@layout/fragment_board" />
 </navigation>

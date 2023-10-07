@@ -13,54 +13,61 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.suprememath.R
+import com.example.suprememath.base.BaseFragment
 import com.example.suprememath.databinding.FragmentMathApiBinding
 
-class MathFragment : Fragment() {
-    private lateinit var binding: FragmentMathApiBinding
+class MathFragment : BaseFragment<MathViewModel, FragmentMathApiBinding>(
+    R.layout.fragment_math_api
+) {
+    override val viewModel by viewModels<MathViewModel>()
+    override val binding by viewBinding(FragmentMathApiBinding::bind)
 
-    private lateinit var mathViewModel: MathViewModel
-    private val rotateOpen:Animation by lazy { AnimationUtils.loadAnimation(requireContext(),R.anim.rotate_open_anim) }
-    private val rotateClose:Animation by lazy { AnimationUtils.loadAnimation(requireContext(),R.anim.rotate_close_anim) }
-    private val fromBottom: Animation by lazy { AnimationUtils.loadAnimation(requireContext(),R.anim.from_bottom_anim) }
-    private val toBottom:Animation by lazy { AnimationUtils.loadAnimation(requireContext(),R.anim.to_bottom_anim) }
+    private val rotateOpen: Animation by lazy {
+        AnimationUtils.loadAnimation(
+            requireContext(),
+            R.anim.rotate_open_anim
+        )
+    }
+    private val rotateClose: Animation by lazy {
+        AnimationUtils.loadAnimation(
+            requireContext(),
+            R.anim.rotate_close_anim
+        )
+    }
+    private val fromBottom: Animation by lazy {
+        AnimationUtils.loadAnimation(
+            requireContext(),
+            R.anim.from_bottom_anim
+        )
+    }
+    private val toBottom: Animation by lazy {
+        AnimationUtils.loadAnimation(
+            requireContext(),
+            R.anim.to_bottom_anim
+        )
+    }
 
     private var clicked = false
 
-    val request_img=21
+    val request_img = 21
 
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentMathApiBinding.inflate(inflater,container,false)
-        return binding.root
+    override fun initialize() {
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        mathViewModel= ViewModelProvider(this)[MathViewModel::class.java]
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        binding.BtnSend.setOnClickListener{
-            mathViewModel.mathExpress(binding.editText.text.toString().trim()).observe(viewLifecycleOwner) {
-                binding.tvResult?.text = "$it"
-            }
+    override fun initListeners() {
+        binding.BtnSend.setOnClickListener {
+            viewModel.mathExpress(binding.editText.text.toString().trim())
+                .observe(viewLifecycleOwner) {
+                    binding.tvResult?.text = "$it"
+                }
         }
 
-
         binding.editBtn.setOnClickListener {
-            mathViewModel.getBackEnd().observe(viewLifecycleOwner){
-//                val imgBack = it.imgUrl as Bitmap
-//                binding.imgBack?.setImageBitmap(imgBack)
-//                binding.txtBack?.text = it.description
-            }
+
         }
         binding.floatingBtn.setOnClickListener {
             onBtnClicked()
@@ -68,21 +75,24 @@ class MathFragment : Fragment() {
         binding.cameraBtn.setOnClickListener {
             val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             try {
-                startActivityForResult(takePictureIntent,request_img)
+                startActivityForResult(takePictureIntent, request_img)
 
-            }catch (e: ActivityNotFoundException){
-                Toast.makeText(requireContext(),"не получилось  ${e.localizedMessage}",Toast.LENGTH_SHORT).show()
+            } catch (e: ActivityNotFoundException) {
+                Toast.makeText(
+                    requireContext(),
+                    "не получилось  ${e.localizedMessage}",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (requestCode == request_img && resultCode == RESULT_OK ){
+        if (requestCode == request_img && resultCode == RESULT_OK) {
             val imageBitmap = data?.extras?.get("data") as Bitmap
-          //  binding.img.setImageBitmap(imageBitmap)
-        }else{
+            //  binding.img.setImageBitmap(imageBitmap)
+        } else {
             super.onActivityResult(requestCode, resultCode, data)
-
         }
     }
 
@@ -90,26 +100,25 @@ class MathFragment : Fragment() {
         setVisibility(clicked)
         setAnim(clicked)
         setClickable(clicked)
-        clicked=!clicked
+        clicked = !clicked
     }
 
     private fun setClickable(clicked: Boolean) {
-        if (!clicked){
+        if (!clicked) {
             binding.cameraBtn.isClickable = true
             binding.editBtn.isClickable = true
-        }
-        else{
+        } else {
             binding.editBtn.isClickable = false
             binding.cameraBtn.isClickable = false
         }
     }
 
-    private fun setAnim(clicked:Boolean) {
-        if (!clicked){
+    private fun setAnim(clicked: Boolean) {
+        if (!clicked) {
             binding.editBtn.startAnimation(fromBottom)
             binding.cameraBtn.startAnimation(fromBottom)
             binding.floatingBtn.startAnimation(rotateOpen)
-        }else{
+        } else {
             binding.editBtn.startAnimation(toBottom)
             binding.cameraBtn.startAnimation(toBottom)
             binding.floatingBtn.startAnimation(rotateClose)
@@ -117,15 +126,12 @@ class MathFragment : Fragment() {
     }
 
     private fun setVisibility(clicked: Boolean) {
-        if (!clicked){
+        if (!clicked) {
             binding.cameraBtn.visibility = View.VISIBLE
-            binding.editBtn.visibility =View.VISIBLE
-        }
-        else{
-            binding.editBtn.visibility =View.INVISIBLE
+            binding.editBtn.visibility = View.VISIBLE
+        } else {
+            binding.editBtn.visibility = View.INVISIBLE
             binding.cameraBtn.visibility = View.INVISIBLE
         }
-
     }
-
 }
